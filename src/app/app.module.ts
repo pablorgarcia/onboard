@@ -17,8 +17,6 @@ import { NewUserFormComponent } from './components/new-user-form/new-user-form.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
     FormsModule,
     ReactiveFormsModule
   ],

@@ -4,11 +4,11 @@
 <form [formGroup]="userForm">
   <div>
     <label>Name</label>
-    <input formcontrolname="name">
+    <input formControlName="name">
   </div>
   <div>
     <label>YouTube URL</label>
-    <input formcontrolname="ytUrl">
+    <input formControlName="ytUrl">
   </div>
   <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
   <button (click)="onSubmit()">Create</button>

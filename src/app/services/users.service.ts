@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection } from '@angular/fire/firestore';
-import { addDoc } from '@firebase/firestore';
-//import { collection } from '@firebase/firestore';
+import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { User } from '../models/user';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private firestore: Firestore) {}
+  constructor() {}
 
   addUser(user: User) {
-    const userRef = collection(this.firestore, 'Users');
+    const userRef = collection(ConfigService.getFirestoreApp(), 'Users');
     return addDoc(userRef, user);
   }
 

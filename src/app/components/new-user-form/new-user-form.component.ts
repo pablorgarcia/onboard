@@ -9,11 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NewUserFormComponent implements OnInit {
 
-  public userForm: FormGroup = new FormGroup({
-    name: new FormControl(),
-    ytUrl: new FormControl(),
-    created: new FormControl()
-  });
+  public userForm: FormGroup = new FormGroup({});
 
 
   constructor(
@@ -29,7 +25,8 @@ export class NewUserFormComponent implements OnInit {
   }
 
 
-  async onSubmit() {
+  onSubmit() {
+    debugger
     console.log(this.userForm.value)
     this.userForm.value.created = new Date();
     this.userService.addUser(this.userForm.value);
