@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin.component'
 
 const routes: Routes = [
   {
-    path: ''
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule)
-  },
+    path: '',
+    component: AdminComponent
+  }
 /*  {
     path: 'product-category',
     loadChildren: () => import('../product-category/product-category.module').then(m => m.ProductCategoryModule)

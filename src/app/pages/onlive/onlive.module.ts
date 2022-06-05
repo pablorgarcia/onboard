@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { OnliveRoutingModule } from './onlive-routing.module';
 import { OnliveComponent } from './onlive.component';
 
 
@@ -8,7 +10,8 @@ import { OnliveComponent } from './onlive.component';
     OnliveComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OnliveRoutingModule
   ]
 })
 export class AdminModule { }

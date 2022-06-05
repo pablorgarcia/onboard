@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -26,8 +26,7 @@ export class NewUserFormComponent implements OnInit {
 
 
   onSubmit() {
-    debugger
-    console.log(this.userForm.value)
+    console.log('on submit', this.userForm.value)
     this.userForm.value.created = new Date();
     this.userService.addUser(this.userForm.value);
   }
