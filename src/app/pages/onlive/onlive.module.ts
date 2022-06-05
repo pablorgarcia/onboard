@@ -14,4 +14,4 @@ import { OnliveComponent } from './onlive.component';
     OnliveRoutingModule
   ]
 })
-export class AdminModule { }
+export class OnliveModule { }

@@ -5,7 +5,11 @@ import { OnliveComponent } from './onlive.component';
 const routes: Routes = [
   {
     path: '',
-    component: OnliveComponent
+    component: OnliveComponent,
+    children: [{
+      path: 'onlive',
+      component: OnliveComponent
+    }]
   }
 ];
 

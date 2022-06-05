@@ -4,12 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewUserFormComponent
   ],
   imports: [
     BrowserModule,

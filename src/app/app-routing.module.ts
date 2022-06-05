@@ -13,11 +13,7 @@ const routes: Routes = [
   },*/
   {
     path: '',
-    loadChildren: () => import('./pages/onlive/onlive.module').then(m => m.AdminModule)
-  },
-  {
-    path: 'onlive',
-    loadChildren: () => import('./pages/onlive/onlive.module').then(m => m.AdminModule)
+    loadChildren: () => import('./pages/onlive/onlive.module').then(m => m.OnliveModule)
   },
   {
     path: 'admin',
