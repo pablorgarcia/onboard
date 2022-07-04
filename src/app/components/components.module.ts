@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { COMPONENTS } from './components.constant';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: COMPONENTS,
@@ -9,7 +10,8 @@ import { COMPONENTS } from './components.constant';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ComponentsModule { }

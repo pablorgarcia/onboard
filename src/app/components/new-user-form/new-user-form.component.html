@@ -1,15 +1,19 @@
 
-<h2>New User</h2>
+<div [ngClass]="'add-new-user-form'">
 
-<form [formGroup]="userForm">
-  <div>
-    <label>Name</label>
-    <input formControlName="name">
-  </div>
-  <div>
-    <label>YouTube URL</label>
-    <input formControlName="ytUrl">
-  </div>
-  <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
-  <button (click)="onSubmit()">Create</button>
-</form>
+  <h2>Add new user</h2>
+
+  <form [formGroup]="userForm">
+    <div>
+      <label>Name</label>
+      <input formControlName="name">
+    </div>
+    <div>
+      <label>YouTube URL</label>
+      <input formControlName="ytUrl">
+    </div>
+    <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
+    <button app-button [data]="{ text: 'Add new user' }" [disabled]="!userForm.valid" (click)="onSubmit()"></button>
+  </form>
+
+</div>

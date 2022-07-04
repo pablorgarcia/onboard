@@ -14,8 +14,8 @@ import { ButtonData } from '../button/button.interface';
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() data: ButtonData;
-  @Input() disabled: boolean;
+  @Input() data: ButtonData = {};
+  @Input() disabled: boolean = true;
 
   constructor() {}
 
