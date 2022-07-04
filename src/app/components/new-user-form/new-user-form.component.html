@@ -1,5 +1,5 @@
 
-<div [ngClass]="'add-new-user-form'">
+<div ngClass="add-new-user-form">
 
   <h2>Add new user</h2>
 
@@ -7,6 +7,12 @@
     <div>
       <label>Name</label>
       <input formControlName="name">
+    </div>
+    <div>
+      <label>Kart number</label>
+      <input type="number" formControlName="idNum">
+      <span *ngIf="userForm.controls['idNum'].hasError('max')" ngClass="error-message">Maximum required number is 99</span>
+      <span *ngIf="userForm.controls['idNum'].hasError('min')" ngClass="error-message">Minimum required number is 0</span>
     </div>
     <div>
       <label>YouTube URL</label>
