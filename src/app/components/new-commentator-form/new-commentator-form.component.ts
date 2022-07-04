@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ComentatorService } from '../../services/comentator.service';
+import { FORM_COMMENTATOR } from '../../services/constants/form.constants';
 
 @Component({
   selector: 'app-new-commentator-form',
@@ -17,9 +18,7 @@ export class NewCommentatorFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.comentatorForm = this.fb.group({
-      ytUrl: ['', [Validators.required]]
-    })
+    this.comentatorForm = this.fb.group(FORM_COMMENTATOR)
   }
 
   onSubmit() {

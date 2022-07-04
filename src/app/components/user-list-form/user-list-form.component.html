@@ -1,0 +1,24 @@
+<div ngClass="user-list-form">
+
+  <h2>User list</h2>
+
+  <span>All users: {{ users.length }}</span>
+
+  <div *ngFor="let user of users; index as i; first as isFirst">
+    <div *ngIf="isFirst">
+      <span>Nº</span>
+      <span>Name</span>
+      <span>Id num</span>
+      <span>URL</span>
+      <span>Created</span>
+    </div>
+    <div>
+      <span>{{ i+1 }}</span>
+      <span>{{ user?.name }}</span>
+      <span>{{ user?.idNum }}</span>
+      <span>{{ user?.ytUrl }}</span>
+      <span>{{ user?.created }}</span>
+    </div>
+  </div>
+
+</div>

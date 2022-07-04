@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FORM_USER } from '../../services/constants/form.constants';
 import { UsersService } from '../../services/users.service';
 
 @Component({
@@ -16,15 +17,9 @@ export class NewUserFormComponent implements OnInit {
     private readonly userService: UsersService
     ) {}
 
-
   ngOnInit(): void {
-    this.userForm = this.fb.group({
-      name: ['', [Validators.required]],
-      idNum: ['', [Validators.min(0), Validators.max(99), Validators.required]],
-      ytUrl: ['', [Validators.required]]
-    })
+    this.userForm = this.fb.group(FORM_USER)
   }
-
 
   onSubmit() {
     console.log('on submit', this.userForm.value)
