@@ -1,0 +1,14 @@
+<div ngClass="add-new-comentator-form">
+
+  <h2>Add new commentator</h2>
+
+  <form [formGroup]="comentatorForm">
+    <div>
+      <label>YouTube URL</label>
+      <input formControlName="ytUrl">
+    </div>
+    <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
+    <button app-button [data]="{ text: 'Add new comentator' }" [disabled]="!comentatorForm.valid" (click)="onSubmit()"></button>
+  </form>
+
+</div>

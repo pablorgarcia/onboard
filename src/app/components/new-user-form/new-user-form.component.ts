@@ -11,7 +11,6 @@ export class NewUserFormComponent implements OnInit {
 
   public userForm: FormGroup = new FormGroup({});
 
-
   constructor(
     private readonly fb: FormBuilder,
     private readonly userService: UsersService
