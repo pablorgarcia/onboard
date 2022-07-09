@@ -16,11 +16,7 @@ export class UserListFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUserList();
-  }
-
-  private getUserList() {
-    this.userService.getUser().then(data => {
+    this.userService.users$.subscribe(data => {
       this.users = data;
     });
   }

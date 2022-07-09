@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ComentatorService } from '../../services/comentator.service';
+import { CommentatorService } from '../../services/commentator.service';
 import { FORM_COMMENTATOR } from '../../services/constants/form.constants';
 
 @Component({
@@ -10,21 +10,22 @@ import { FORM_COMMENTATOR } from '../../services/constants/form.constants';
 })
 export class NewCommentatorFormComponent implements OnInit {
 
-  public comentatorForm: FormGroup = new FormGroup({});
+  public commentatorForm: FormGroup = new FormGroup({});
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly comentatorService: ComentatorService
+    private readonly commentatorService: CommentatorService
   ) { }
 
   ngOnInit(): void {
-    this.comentatorForm = this.fb.group(FORM_COMMENTATOR)
+    this.commentatorForm = this.fb.group(FORM_COMMENTATOR)
   }
 
   onSubmit() {
-    console.log('on submit', this.comentatorForm.value)
-    this.comentatorForm.value.created = new Date();
-    this.comentatorService.addComentator(this.comentatorForm.value);
+    console.log('on submit', this.commentatorForm.value)
+    this.commentatorForm.value.created = new Date();
+    this.commentatorService.addComentator(this.commentatorForm.value);
+    //this.commentatorForm.value.ytUrl = '';
   }
 
 }
