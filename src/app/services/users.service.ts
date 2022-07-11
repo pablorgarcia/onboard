@@ -8,17 +8,16 @@ import { ConfigService } from './config.service';
   providedIn: 'root'
 })
 export class UsersService {
+
+  // Observable data
+  private userSubject: BehaviorSubject<User[]>; // sujeto, canal conecta observador y observado
+  private users: User[] = []; // propiedad que va a ser dinamico, observado
+  public users$: Observable<User[]> = new Observable(); // cambia el estado del observado, observador
+
   // "Static" para consumir menos memoria
 
   // Almacenamos los productos de la DB
-  private usersCollection = collection(ConfigService.getFirestoreApp(), 'Users');
-
-  // sujeto, canal conecta observador y observado
-  private userSubject: BehaviorSubject<User[]>;
-  // propiedad que va a ser dinamico, observado
-  private users: User[] = [];
-  // se encarga de cambiar el estado del observado, observador
-  public users$: Observable<User[]> = new Observable();
+  // private usersCollection = collection(ConfigService.getFirestoreApp(), 'Users');
 
   constructor() {
     this.getUser();
@@ -37,8 +36,10 @@ export class UsersService {
       // Traemos los productos que estaán en la DB
       const usersSnapshot = await getDocs(collection(ConfigService.getFirestoreApp(), 'Users'));
       const usersList = usersSnapshot.docs.map(doc => ({id: doc?.id, ...doc?.data()}));
-      this.users = usersList as any; // any porque me devuelve el tipo de dato de firebase
+      this.users = usersList as any; // "any" porque me devuelve el tipo de dato de firebase
     }
+    // Ordenamos el array mediante el numero de kart (idNum)
+    this.users.sort((a, b) => { return a.idNum - b.idNum; });
     this.userSubject.next(this.users);
     return this.users;
   }

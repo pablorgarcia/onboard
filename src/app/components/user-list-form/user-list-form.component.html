@@ -1,8 +1,6 @@
 <div ngClass="user-list-form">
 
-  <h2>User list</h2>
-
-  <span>All users: {{ users.length }}</span>
+  <h2>User list ({{ users.length }})</h2>
 
   <div *ngFor="let user of users; index as i; first as isFirst">
     <div *ngIf="isFirst">

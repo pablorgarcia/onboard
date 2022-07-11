@@ -1,7 +1,16 @@
 <div ngClass="add-new-user-form">
 
-  <h2>Add new user</h2>
+  <div *ngIf="users.length > 0" ngClass="last-user-added">
+    <div *ngFor="let user of users; index as i; last as isLast">
+      <div *ngIf="isLast">
+        ULTIMO USUARIO AÑADIDO: {{ user.name }}
+        <br>
+        NUMERO KART: {{ user.idNum }}
+      </div>
+    </div>
+  </div>
 
+  <h2>Add new user</h2>
   <form [formGroup]="userForm">
     <div>
       <label>Name</label>
@@ -20,5 +29,9 @@
     <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
     <button app-button [data]="{ text: 'Add new user' }" [disabled]="!userForm.valid" (click)="onSubmit()"></button>
   </form>
+
+  <!--span>USUARIOS {{ users.length }}</span>
+  <br>
+  <span>{{ users | json }}</span-->
 
 </div>
