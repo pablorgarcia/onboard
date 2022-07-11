@@ -7,9 +7,15 @@
 - to manage database data
 
 
+Made with Firebase DB
+
 ---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+
+## Data Base
+Made with Firebase DB ^9.5.0"
+firebase/firestore/lite
 
 ## Development server
 
