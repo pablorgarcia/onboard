@@ -1,19 +1,17 @@
-<div ngClass="add-new-commentator-form">
+<section>
 
-  <h2 *ngIf="commentator.length === 0" ngClass="add-new-commentator-title">Add new commentator</h2>
-  <div *ngIf="commentator.length > 0">
-    <div ngClass="current-commentator" *ngFor="let comment of commentator">
+  <h2 *ngIf="commentator.length === 0">📺 Add new commentator</h2>
+  <div *ngIf="commentator.length > 0" ngClass="title-combined">
+    <h2>📺 Update new commentator</h2>
+    <div ngClass="info-text" *ngFor="let comment of commentator">
       <span>Current commentator: {{ comment.ytUrl }}</span>
     </div>
-    <h2 ngClass="update-new-commentator-title">Update new commentator</h2>
   </div>
-
-  "delete" commentator
 
   <form [formGroup]="commentatorForm">
     <div>
       <label>YouTube URL</label>
-      <input formControlName="ytUrl">
+      <input formControlName="ytUrl" placeholder="Text a new URL">
     </div>
     <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
     <span *ngIf="commentator.length === 0" app-button [data]="{ text: 'Add new commentator' }" [disabled]="!commentatorForm.valid" (click)="addComentator()"></span>
@@ -27,4 +25,4 @@
   <br>
   <span>{{ commentator | json }}</span-->
 
-</div>
+</section>

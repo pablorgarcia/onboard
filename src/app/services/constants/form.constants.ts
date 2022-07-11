@@ -5,9 +5,8 @@ const FORM_USER = {
   idNum: ['', [Validators.min(0), Validators.max(99), Validators.required]],
   ytUrl: ['', [Validators.required]]
 }
-export { FORM_USER }
 
 const FORM_COMMENTATOR = {
   ytUrl: ['', [Validators.required]]
 }
-export { FORM_COMMENTATOR }
+export { FORM_USER, FORM_COMMENTATOR }

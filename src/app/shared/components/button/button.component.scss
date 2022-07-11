@@ -1,11 +1,51 @@
+button {
+  // https://material.angular.io/components/button/overview
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  transform: translate3d(0, 0, 0);
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 8px 8px 8px 0;
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+
+  color: white;
+  font-weight: var(--text-normal);
+}
+
 .addButton {
-  background-color: green;
+  background-color: var(--color-blue-tw);
+}
+.addButton:hover {
+  background-color: var(--color-blue-tw-hover);
 }
 
 .updateButton {
-  background-color: blue;
+  background-color: var(--color-blue-tw);
+}
+.updateButton:hover {
+  background-color: var(--color-blue-tw-hover);
 }
 
+
 .deleteButton {
-  background-color: red;
+  background-color: var(--color-gray-separation-tw);
+  color: var(--color-black-tw);
+}
+.deleteButton:hover {
+  background-color: var(--color-gray-separation-tw-hover);
 }

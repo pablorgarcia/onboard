@@ -1,6 +1,9 @@
-<div ngClass="user-list-form">
+<section>
 
-  <h2>User list ({{ users.length }})</h2>
+  <div ngClass="title-combined">
+    <h2>🏎️ User list</h2>
+    <span ngClass="info-text">{{ users.length }} users created</span>
+  </div>
 
   <div *ngFor="let user of users; index as i; first as isFirst">
     <div *ngIf="isFirst">
@@ -19,4 +22,4 @@
     </div>
   </div>
 
-</div>
+</section>
