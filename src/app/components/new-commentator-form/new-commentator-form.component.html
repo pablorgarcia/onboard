@@ -16,8 +16,11 @@
       <input formControlName="ytUrl">
     </div>
     <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
-    <button *ngIf="commentator.length === 0" app-button [data]="{ text: 'Add new commentator' }" [disabled]="!commentatorForm.valid" (click)="onSubmit()"></button>
-    <button *ngIf="commentator.length > 0" app-button [data]="{ text: 'Update new commentator' }" [disabled]="!commentatorForm.valid" (click)="onSubmit()"></button>
+    <span *ngIf="commentator.length === 0" app-button [data]="{ text: 'Add new commentator' }" [disabled]="!commentatorForm.valid" (click)="addComentator()"></span>
+    <div *ngIf="commentator.length > 0">
+      <span app-button [data]="{ text: 'Update new commentator', newClass: 'updateButton' }" [disabled]="!commentatorForm.valid" (click)="updateComentator()"></span>
+      <span app-button [data]="{ text: 'Delete commentator', newClass: 'deleteButton' }" (click)="deleteComentator()"></span>
+    </div>
   </form>
 
   <!--span>NUMERO {{ commentator.length | json }}</span>

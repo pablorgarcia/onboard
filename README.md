@@ -1,5 +1,13 @@
 # OnLiveMediaChannelsAtOnce
 
+/root page
+- to show youtube iframes chosen from the DB
+/admin page
+- to manage database data
+
+
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
 ## Development server

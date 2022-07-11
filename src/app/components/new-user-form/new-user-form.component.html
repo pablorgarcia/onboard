@@ -27,7 +27,7 @@
       <input formControlName="ytUrl">
     </div>
     <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
-    <button app-button [data]="{ text: 'Add new user' }" [disabled]="!userForm.valid" (click)="onSubmit()"></button>
+    <span app-button [data]="{ text: 'Add new user', newClass: 'addButton' }" [disabled]="!userForm.valid" (click)="onSubmit()"></span>
   </form>
 
   <!--span>USUARIOS {{ users.length }}</span>

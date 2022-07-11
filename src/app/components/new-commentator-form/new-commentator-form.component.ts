@@ -26,11 +26,22 @@ export class NewCommentatorFormComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log('on submit', this.commentatorForm.value)
+  addComentator() {
+    console.log('on submit addComentator', this.commentatorForm.value)
     this.commentatorForm.value.created = new Date();
     this.commentatorService.addComentator(this.commentatorForm.value);
     //this.commentatorForm.value.ytUrl = '';
+  }
+
+  updateComentator() {
+    console.log('on submit updateComentator', this.commentatorForm.value)
+    this.commentatorForm.value.created = new Date();
+    this.commentatorService.updateComentator(this.commentatorForm.value);
+  }
+
+  deleteComentator() {
+    console.log('on submit deleteComentator')
+    this.commentatorService.deleteComentator();
   }
 
 }

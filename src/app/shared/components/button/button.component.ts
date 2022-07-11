@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonData } from '../button/button.interface';
 
 @Component({
-  selector: 'button[app-button]',
+  selector: 'span[app-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   host: {
@@ -12,13 +12,11 @@ import { ButtonData } from '../button/button.interface';
   },
   inputs: ['data', 'disabled']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
 
   @Input() data: ButtonData = {};
   @Input() disabled: boolean = true;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
 }
