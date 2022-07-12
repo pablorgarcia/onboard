@@ -5,7 +5,7 @@
     <div *ngIf="users.length > 0" ngClass="info-text">
       <div *ngFor="let user of users; index as i; last as isLast">
         <span *ngIf="isLast">
-          Last user: @{{ user.name }} Num: {{ user.idNum }} · {{ user.created }}
+          Last user created: @{{ user.name }} Num: {{ user.idNum }} · {{ user.created }}
         </span>
       </div>
     </div>

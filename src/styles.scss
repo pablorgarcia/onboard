@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --font-size-normal: 15px;
-  --font-size-small: 13px;
+  --font-size-small: 12px;
   // Noto font weight
   --font-weight-light: 200:
   --font-weight-normal: 400;
@@ -29,6 +29,7 @@ body {
 }
 
 section {
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-gray-separation-tw);
 }
 
@@ -48,10 +49,10 @@ input {
   background-color: var(--color-gray-separation-extra-tw);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-normal);
-  line-height: 1.125;
+  line-height: 1.6;
   border-radius: 0.25rem;
   border: 1px solid var(--color-gray-separation-tw);
-  margin: 0 5px;
+  margin: 0.1rem 5px;
   padding: 3px 6px;
   vertical-align: middle;
 }
@@ -70,6 +71,7 @@ input {
 .title-combined span {
   flex-shrink: 3;
   align-self: center;
+  font-size: var(--font-size-small);
 }
 
 .info-text {
