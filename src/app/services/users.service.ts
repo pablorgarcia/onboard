@@ -38,6 +38,23 @@ export class UsersService {
       const usersList = usersSnapshot.docs.map(doc => ({id: doc?.id, ...doc?.data()}));
       this.users = usersList as any; // "any" porque me devuelve el tipo de dato de firebase
     }
+
+    // https://contactmentor.com/javascript-map-array-of-objects/
+    this.users.map(({ created }, i) => {
+      console.log('HOLA', i,{ created })
+
+      /*
+      getData(epochDate: any) {
+        let myDate = new Date( epochDate *1000);
+        console.log('1',myDate)
+        myDate.toISOString();
+        console.log('2',myDate)
+        myDate.toLocaleString();
+        console.log('3',myDate)
+      }*/
+
+    })
+
     // Ordenamos el array mediante el numero de kart (idNum)
     this.users.sort((a, b) => { return a.idNum - b.idNum; });
     this.userSubject.next(this.users);
