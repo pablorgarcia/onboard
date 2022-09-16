@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { OnliveRoutingModule } from './onlive-routing.module';
 import { OnliveComponent } from './onlive.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { OnliveComponent } from './onlive.component';
   ],
   imports: [
     CommonModule,
-    OnliveRoutingModule
+    OnliveRoutingModule,
+    ComponentsModule
   ]
 })
 export class OnliveModule { }
