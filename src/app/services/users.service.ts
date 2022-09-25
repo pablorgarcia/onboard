@@ -38,6 +38,7 @@ export class UsersService {
       const usersList = usersSnapshot.docs.map(doc => ({id: doc?.id, ...doc?.data()}));
       this.users = usersList as any; // "any" porque me devuelve el tipo de dato de firebase
     }
+    debugger
 
     // https://contactmentor.com/javascript-map-array-of-objects/
     this.users.map(({ created }, i) => {

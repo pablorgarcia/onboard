@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { UsersService } from 'src/app/services/users.service';
+
 
 
 @Component({
@@ -20,10 +22,16 @@ export class PlayerComponent implements OnInit {
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer,
+    private userService: UsersService) {
     this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/Y0noykDkmKI");
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getUser();
+
+  }
+
+
 
 }
