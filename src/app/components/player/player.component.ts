@@ -28,10 +28,7 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getUser();
-
+    const h = this.userService.getUser();
   }
-
-
 
 }
