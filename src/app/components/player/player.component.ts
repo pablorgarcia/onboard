@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { UsersService } from 'src/app/services/users.service';
-
+import { UsersService } from '../../services/users.service';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -11,24 +11,32 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class PlayerComponent implements OnInit {
 
-  public urlTest: string = 'https://www.youtube.com/embed/Y0noykDkmKI';
   public safeSrc: SafeResourceUrl;
+  public users: User[] = [];
+  public twitchURLs: any;
 
-  public aaa: string = `<iframe
-  width="560"
-  height="315"
-  src=${ this.urlTest }
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
-  constructor(private sanitizer: DomSanitizer,
-    private userService: UsersService) {
-    this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/Y0noykDkmKI");
+  constructor(
+    private sanitizer: DomSanitizer,
+    public userService: UsersService) {
+      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel={this.ytUrl}&enableExtensions=true&parent=pablogarcia.dev&muted=true`);
+      // ${this.users.ytUrl}
   }
 
-  ngOnInit(): void {
-    const h = this.userService.getUser();
+  async ngOnInit() {
+    await this.setTwitchURLs();
+  }
+
+  private async setTwitchURLs() {
+    this.userService.getUser().then(data => {
+      this.twitchURLs = data.map(d => ({urlTwitch: this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel=${d.ytUrl.split(' ').join('').toLowerCase()}&enableExtensions=true&parent=pablogarcia.dev&muted=true`)}));
+      console.log(this.twitchURLs)
+    })
+   /*
+    this.userService.users$.subscribe(data => {
+      this.users = data;
+      console.log('3', this.users[0]?.ytUrl)
+    });
+    */
   }
 
 }

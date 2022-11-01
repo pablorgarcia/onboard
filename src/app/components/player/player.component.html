@@ -1,51 +1,60 @@
 <p>player works!</p>
 
-tuich
-https://www.twitch.tv/videos/1594295104
+<div *ngFor="let user of twitchURLs; index as i;">
+
+  <span>{{ user?.urlTwitch }}</span>
+
+  <iframe
+  [src]="user?.urlTwitch"
+  frameborder="0"
+  allowfullscreen="true"
+  scrolling="no"
+  height="378"
+  width="620"></iframe>
+</div>
+
+<!--
+Twitch<br>
 <iframe
- src="https://player.twitch.tv/?video=1594325853&parent=https://pablogarcia.dev/on-live-media-channels-at-once&muted=true"
+  [src]="safeSrc"
+  frameborder="0"
+  allowfullscreen="true"
+  scrolling="no"
+  height="378"
+  width="620"></iframe>
+
+  <br><br>
+<iframe
+ src="https://player.twitch.tv/?channel=nicoabadtv&enableExtensions=true&parent=pablogarcia.dev&muted=true"
  frameborder="0"
  allowfullscreen="true"
  scrolling="no"
  height="378"
  width="620"></iframe>
+-->
 
-youtube
+<!--
+  <div *ngFor="let user of users; index as i;">
+  <iframe
+  src="`https://player.twitch.tv/?channel=${this.users.ytUrl}&enableExtensions=true&parent=pablogarcia.dev&muted=true`"
+  frameborder="0"
+  allowfullscreen="true"
+  scrolling="no"
+  height="378"
+  width="620"></iframe>
+  <span>{{ user?.ytUrl }}</span>
+</div>
+-->
+
+<!-- youtube
 <b>Iframe CON variable</b><br>
 <span>
 <iframe
  width="560"
  height="315"
  [src]="safeSrc"
- title="YouTube video player"
+ title="GPTwitter"
  frameborder="0"
  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
  allowfullscreen></iframe>
-
-<br><br>
-
-hola<br>
-<div *ngIf="aaa" [innerHTML]=aaa>
-
-</div>
-adios
-
-<!--b>Iframe SIN variable</b><br>
-<iframe
- width="560"
- height="315"
- src="https://www.youtube.com/embed/Y0noykDkmKI"
- title="YouTube video player"
- frameborder="0"
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
- allowfullscreen></iframe-->
-
-<br><br>
-
-<b>Variable aaa (iframe string)</b><br>
-{{ aaa }}
-
-<br><br>
-
-<b>String urlTest</b><br>
-{{ urlTest }}
+-->
