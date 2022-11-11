@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "on-live-media-channels-at-once": {
+    "onboard": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/on-live-media-channels-at-once",
+            "outputPath": "dist/onboard",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "on-live-media-channels-at-once:build:production"
+              "browserTarget": "onboard:build:production"
             },
             "development": {
-              "browserTarget": "on-live-media-channels-at-once:build:development"
+              "browserTarget": "onboard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "on-live-media-channels-at-once:build"
+            "browserTarget": "onboard:build"
           }
         },
         "test": {
@@ -110,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "on-live-media-channels-at-once"
+  "defaultProject": "onboard"
 }

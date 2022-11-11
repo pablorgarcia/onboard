@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/on-live-media-channels-at-once'),
+      dir: require('path').join(__dirname, './coverage/onboard'),
       subdir: '.',
       reporters: [
         { type: 'html' },

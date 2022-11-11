@@ -1,4 +1,4 @@
-# OnLiveMediaChannelsAtOnce
+# Onboard app
 
 /root page
 - to show youtube iframes chosen from the DB
