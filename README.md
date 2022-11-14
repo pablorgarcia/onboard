@@ -6,7 +6,6 @@
 /admin page
 - to manage database data
 
-
 Made with Firebase DB
 
 ---

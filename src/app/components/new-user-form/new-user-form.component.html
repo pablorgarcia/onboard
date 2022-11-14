@@ -1,11 +1,11 @@
 <section>
 
   <div ngClass="title-combined">
-    <h2>🏎️ Añade un nuevo piloto</h2>
+    <h2>Añade un nuevo piloto</h2>
     <div *ngIf="users.length > 0" ngClass="info-text">
       <div *ngFor="let user of users; index as i; last as isLast">
         <span *ngIf="isLast">
-          Last user created: @{{ user.name }} Num: {{ user.idNum }} · {{ user.created }}
+          Último piloto creado: @{{ user.name }} Número: {{ user.idNum }} · {{ user.created }}
         </span>
       </div>
     </div>

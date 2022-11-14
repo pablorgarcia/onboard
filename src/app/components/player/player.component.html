@@ -2,7 +2,7 @@
 
 <div *ngFor="let user of userData; index as i;">
 
-  <div [className]="'title-name'">{{ user?.kartNum }}{{ user?.name }}</div>
+  <div ngClass="title-name">{{ user?.kartNum }}{{ user?.name }}</div>
 
   <iframe
   [src]="user?.url"
