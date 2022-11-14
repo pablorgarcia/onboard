@@ -36,6 +36,7 @@ export class UsersService {
       // Traemos los productos que estaán en la DB
       const usersSnapshot = await getDocs(collection(ConfigService.getFirestoreApp(), 'Users'));
       const usersList = usersSnapshot.docs.map(doc => ({id: doc?.id, ...doc?.data()}));
+      console.log('2222', usersList)
       this.users = usersList as any; // "any" porque me devuelve el tipo de dato de firebase
     }
 

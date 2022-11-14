@@ -12,21 +12,21 @@
   </div>
   <form [formGroup]="userForm">
     <div>
-      <label>Name</label>
+      <label>Nombre de Twitter</label>
       <input formControlName="name" placeholder="Write a new name">
     </div>
     <div>
-      <label>Kart number</label>
+      <label>Número de kart</label>
       <input type="number" formControlName="idNum" placeholder="Number from 0 to 99">
       <span *ngIf="userForm.controls['idNum'].hasError('max')" ngClass="error-message">Maximum required number is 99</span>
       <span *ngIf="userForm.controls['idNum'].hasError('min')" ngClass="error-message">Minimum required number is 0</span>
     </div>
     <div>
-      <label>Twitch URL</label>
+      <label>Nombre de Twitch</label>
       <input formControlName="ytUrl" placeholder="Write a new URL">
     </div>
     <!--button app-button [data]="{ text: 'Guardar usuario'}" [disabled]="!userForm.valid" (click)="submit()"></button-->
-    <span app-button [data]="{ text: 'Add new user', newClass: 'addButton' }" [disabled]="!userForm.valid" (click)="onSubmit()"></span>
+    <span app-button [data]="{ text: 'Guardar piloto', newClass: 'addButton' }" [disabled]="!userForm.valid" (click)="onSubmit()"></span>
   </form>
 
   <!--span>USUARIOS {{ users.length }}</span>

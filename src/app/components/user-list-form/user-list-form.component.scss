@@ -17,22 +17,24 @@
 }
 
 .driver-list-flex span {
-  width: 100px;
+  min-width: 100px;
+  max-width: 200px;
+  text-overflow: ellipsis;
 }
 
 .driver-list-col-1 {
 //  flex-grow: 2;
-background-color: red;
+  background-color: red;
 }
 
 .driver-list-col-2 {
 //  flex-grow: 1;
-background-color: green;
+  background-color: green;
 }
 
 .driver-list-col-3 {
   //  flex-grow: 1;
-  background-color: yellow;
+  background-color: brown;
 }
 
 .driver-list-col-4 {
