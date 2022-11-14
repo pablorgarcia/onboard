@@ -13,30 +13,28 @@ export class PlayerComponent implements OnInit {
 
   public safeSrc: SafeResourceUrl;
   public users: User[] = [];
-  public twitchURLs: any;
+  public userData: any;
 
   constructor(
     private sanitizer: DomSanitizer,
     public userService: UsersService) {
       this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel={this.ytUrl}&enableExtensions=true&parent=pablogarcia.dev&muted=true`);
-      // ${this.users.ytUrl}
   }
 
   async ngOnInit() {
-    await this.setTwitchURLs();
+    await this.setUrlUserData();
   }
 
-  private async setTwitchURLs() {
+  private async setUrlUserData() {
     this.userService.getUser().then(data => {
-      this.twitchURLs = data.map(d => ({urlTwitch: this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel=${d.ytUrl.split(' ').join('').toLowerCase()}&enableExtensions=true&parent=pablogarcia.dev&muted=true`)}));
-      console.log(this.twitchURLs)
+      this.userData = data.map(d => ({
+        name: d.name,
+        kartNum: d.idNum,
+        url: this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel=${d.ytUrl.split(' ').join('').toLowerCase()}&enableExtensions=true&parent=pablogarcia.dev&muted=true`)
+      }));
+      console.log('1', this.userData)
     })
-   /*
-    this.userService.users$.subscribe(data => {
-      this.users = data;
-      console.log('3', this.users[0]?.ytUrl)
-    });
-    */
+
   }
 
 }

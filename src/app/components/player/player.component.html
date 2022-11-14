@@ -1,60 +1,15 @@
-<p>player works!</p>
+<small>player works!</small><br>
 
-<div *ngFor="let user of twitchURLs; index as i;">
+<div *ngFor="let user of userData; index as i;">
 
-  <span>{{ user?.urlTwitch }}</span>
+  <div [className]="'title-name'">{{ user?.kartNum }}{{ user?.name }}</div>
 
   <iframe
-  [src]="user?.urlTwitch"
+  [src]="user?.url"
   frameborder="0"
   allowfullscreen="true"
   scrolling="no"
   height="378"
   width="620"></iframe>
+
 </div>
-
-<!--
-Twitch<br>
-<iframe
-  [src]="safeSrc"
-  frameborder="0"
-  allowfullscreen="true"
-  scrolling="no"
-  height="378"
-  width="620"></iframe>
-
-  <br><br>
-<iframe
- src="https://player.twitch.tv/?channel=nicoabadtv&enableExtensions=true&parent=pablogarcia.dev&muted=true"
- frameborder="0"
- allowfullscreen="true"
- scrolling="no"
- height="378"
- width="620"></iframe>
--->
-
-<!--
-  <div *ngFor="let user of users; index as i;">
-  <iframe
-  src="`https://player.twitch.tv/?channel=${this.users.ytUrl}&enableExtensions=true&parent=pablogarcia.dev&muted=true`"
-  frameborder="0"
-  allowfullscreen="true"
-  scrolling="no"
-  height="378"
-  width="620"></iframe>
-  <span>{{ user?.ytUrl }}</span>
-</div>
--->
-
-<!-- youtube
-<b>Iframe CON variable</b><br>
-<span>
-<iframe
- width="560"
- height="315"
- [src]="safeSrc"
- title="GPTwitter"
- frameborder="0"
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
- allowfullscreen></iframe>
--->
