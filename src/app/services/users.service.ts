@@ -42,17 +42,10 @@ export class UsersService {
 
     // https://contactmentor.com/javascript-map-array-of-objects/
     this.users.map(({ created }, i) => {
-      console.log('HOLA', i,{ created })
 
-      /*
-      getData(epochDate: any) {
-        let myDate = new Date( epochDate *1000);
-        console.log('1',myDate)
-        myDate.toISOString();
-        console.log('2',myDate)
-        myDate.toLocaleString();
-        console.log('3',myDate)
-      }*/
+      // https://firebase.google.com/docs/reference/js/v8/firebase.firestore.Timestamp#todate
+      // https://www.tabnine.com/code/javascript/functions/toDate
+      console.log('HOLA', i, created )
 
     })
 
